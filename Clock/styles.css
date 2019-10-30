@@ -3,7 +3,9 @@
     padding: 0;
     box-sizing: border-box;
 }
-
+:root {
+    --clock-size: 400px;
+}
 body {
     display: flex;
     justify-content: center;
@@ -13,8 +15,8 @@ body {
 }
 
 .clock {
-    width: 350px;
-    height: 350px;
+    width: var(--clock-size);
+    height: var(--clock-size);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -30,8 +32,8 @@ body {
 .clock::before {
     content: '';
     position: absolute;
-    width: 15px;
-    height: 15px;
+    width: calc(var(--clock-size) * .0428);
+    height: calc(var(--clock-size) * .0428);
     background: #848484;
     border: 2px solid #fff;
     z-index: 10;
@@ -43,18 +45,18 @@ body {
 }
 
 .hour, .hr {
-    width: 160px;
-    height: 160px;
+    width: calc(var(--clock-size) * .4571);
+    height: calc(var(--clock-size) * .4571);
 }
 
 .min, .mn {
-    width: 190px;
-    height: 190px;
+    width: calc(var(--clock-size) * .5428);
+    height: calc(var(--clock-size) * .5428);
 }
 
 .sec, .sc {
-    width: 230px;
-    height: 230px;
+    width: calc(var(--clock-size) * .6571);
+    height: calc(var(--clock-size) * .6571);
 }
 .hr, .mn, .sc {
     display: flex;
@@ -66,8 +68,9 @@ body {
 .hr::before {
     content: '';
     position: absolute;
-    width: 8px;
-    height: 80px;
+    min-width: 8px;
+    width: calc(var(--clock-size) * .0228);
+    height: calc(var(--clock-size) * .2285);
     background: #848484;
     z-index: 11;
     border-radius: 6px 6px 0 0;
@@ -76,8 +79,9 @@ body {
 .mn::before {
     content: '';
     position: absolute;
-    width: 4px;
-    height: 90px;
+    min-width: 4px;
+    width: calc(var(--clock-size) * .0114);
+    height: calc(var(--clock-size) * .2571);
     background: #d6d6d6;
     z-index: 12;
     border-radius: 6px 6px 0 0;
@@ -86,8 +90,9 @@ body {
 .sc::before {
     content: '';
     position: absolute;
-    width: 2px;
-    height: 150px;
+    min-width: 2px;
+    width: calc(var(--clock-size) * .0057);
+    height: calc(var(--clock-size) * .4285);
     background: #ff6767;
     z-index: 13;
     border-radius: 6px 6px 0 0;
