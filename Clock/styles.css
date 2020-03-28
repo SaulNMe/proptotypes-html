@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 :root {
-    --clock-size: 600px;
+    --clock-size: 150px;
 }
 body {
     display: flex;
